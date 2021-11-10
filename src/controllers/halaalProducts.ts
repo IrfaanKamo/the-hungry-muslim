@@ -1,8 +1,9 @@
 
-import { Badge } from './spoonacular/enums/Badge';
-import { Product } from './spoonacular/models/Product';
-import { searchGroceryProducts } from './spoonacular/api/groceryProductSearch';
-import { HalaalProduct } from './models/HalaalProduct';
+import { Request, Response, NextFunction } from 'express';
+import { Badge } from '../lib/spoonacular/enums/Badge';
+import { Product } from '../lib/spoonacular/models/Product';
+import { searchGroceryProducts } from '../lib/spoonacular/api/groceryProductSearch';
+import { HalaalProduct } from '../models/HalaalProduct';
 
 const mapToHalaalProduct =  (products: Product[]) : HalaalProduct[] => {
     let halaalProducts: HalaalProduct[] = [];
@@ -30,5 +31,11 @@ const mapToHalaalProduct =  (products: Product[]) : HalaalProduct[] => {
     return halaalProducts;
 }
 
-searchGroceryProducts('pringles')
-    .then( products => console.log(mapToHalaalProduct(products)));
+const getHalaalProducts = async (req: Request, res: Response, next: NextFunction) => {
+    let products = await searchGroceryProducts('pringles');
+    return res.status(200).json({
+        halaalProducts: mapToHalaalProduct(products)
+    })
+}
+
+export default { getHalaalProducts };

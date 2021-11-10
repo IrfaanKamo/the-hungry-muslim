@@ -1,5 +1,5 @@
 import axios from "axios";
-import { config } from "../../config";
+import { config } from "../../../config";
 import { Product, ProductResponse } from "../models/Product";
 
 let groceryProductSearchUrl = `${config.SpoonacularFoodUrl}/products/search?apiKey=${config.ApiKey}&addProductInformation=true&number=${config.SpoonacularNumOfProductsReturned}`;
