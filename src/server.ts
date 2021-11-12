@@ -1,6 +1,5 @@
 import http from 'http';
 import express, { Express } from 'express';
-import route from './routes/halaalProducts';
 import routes from './routes/halaalProducts';
 
 const router: Express = express();
