@@ -2,9 +2,9 @@ import axios from "axios";
 import { config } from "../../../config";
 import { Product, ProductResponse } from "../models/Product";
 
-let groceryProductSearchUrl = `${config.SpoonacularFoodUrl}/products/search?apiKey=${config.ApiKey}&addProductInformation=true&number=${config.SpoonacularNumOfProductsReturned}`;
-
 export async function searchGroceryProducts(searchString?: string): Promise<Product[]> {
+    let groceryProductSearchUrl = `${config.SpoonacularFoodUrl}/products/search?apiKey=${config.ApiKey}&addProductInformation=true&number=${config.SpoonacularNumOfProductsReturned}`;
+
     if(searchString){
         groceryProductSearchUrl = groceryProductSearchUrl.concat(`&query=${searchString}`);
     }
