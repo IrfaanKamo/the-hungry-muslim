@@ -1,9 +1,9 @@
-import React from 'react';
+import Product from './Product';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      Test
+      <Product />
     </div>
   );
 }

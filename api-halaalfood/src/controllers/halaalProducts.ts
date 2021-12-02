@@ -9,7 +9,7 @@ const mapToHalaalProduct =  (products: Product[]) : HalaalProduct[] => {
     let halaalProducts: HalaalProduct[] = [];
 
     products.forEach( product => {
-        let halaalProduct: HalaalProduct = new HalaalProduct(product.title, product.ingredientList);
+        let halaalProduct: HalaalProduct = new HalaalProduct(product.id, product.title, product.ingredientList);
 
         product.badges.forEach(badge => {
             switch (badge) {
