@@ -2,9 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-##
+## Tailwind
 
-## Available Scripts
+Tailwind is the chosen CSS framework for this project. A special installation for the Create React App was [installed](https://tailwindcss.com/docs/guides/create-react-app).  
+As part of the process, Craco was installed. This acts as a customizable wrapper to the react-scripts functionality.
+
+## Available Scripts for Create React App
 
 In the project directory, you can run:
 
