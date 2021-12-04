@@ -16,6 +16,6 @@ export async function searchGroceryProducts(searchString?: string): Promise<Prod
     }
     catch(error) {
         console.error('Failed to get Grocery Products with error: ', error);
-        return [];
+        throw error;
     }
 }

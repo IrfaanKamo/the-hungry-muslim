@@ -10,7 +10,8 @@ This is the API that we call to get data about food related queries. We make a c
 We have added a `.env` configuration file which handles project level configurations such as API keys. These configurations are initialized in the `config.ts` file and then exported for use within the project.
 
 ### Express Server
-Our project runs as a local server which serves the halaal product data. To achieve this, we have used the `express` library. This meant us having to creating a routing structure as well as a `server.ts` file which initializes the server.
+Our project runs as a local server which serves the halaal product data. To achieve this, we have used the `express` library. This meant us having to creating a routing structure as well as a `server.ts` file which initializes the server.  
+Express makes use of routing which is defined by a `routes` folder which calls default exported controller functions.
 
 ### Dockerising
 We make use of a Dockerfile to containerise the API for deployment.

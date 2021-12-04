@@ -33,9 +33,17 @@ const mapToHalaalProduct =  (products: Product[]) : HalaalProduct[] => {
 
 const getHalaalProducts = async (req: Request, res: Response, next: NextFunction) => {
     const search_text = req.query.search_text as string | '';
+    if(!search_text) {
+        return res.status(400);
+    }
 
-    let products = await searchGroceryProducts(search_text);
-    return res.status(200).json(mapToHalaalProduct(products))
+    try {
+        let products = await searchGroceryProducts(search_text);
+        return res.status(200).json(mapToHalaalProduct(products));
+    }
+    catch{
+        return res.status(500);
+    }
 }
 
 export default { getHalaalProducts };
