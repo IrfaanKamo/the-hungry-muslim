@@ -4,8 +4,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Tailwind
 
-Tailwind is the chosen CSS framework for this project. A special installation for the Create React App was [installed](https://tailwindcss.com/docs/guides/create-react-app).  
-As part of the process, Craco was installed. This acts as a customizable wrapper to the react-scripts functionality.
+- Tailwind is the chosen CSS framework for this project. A special installation for the Create React App was [installed](https://tailwindcss.com/docs/guides/create-react-app).  
+- As part of the process, Craco was installed. This acts as a customizable wrapper to the react-scripts functionality.
+- Tailwind Lineclamp was installed as an add-on and added to the config.
+
+## React-Icons
+We are using react-icons to display icons around the website. [Go to react-icons](https://react-icons.github.io/react-icons)
 
 ## Available Scripts for Create React App
 

@@ -1,3 +1,7 @@
+import { FcOk } from "react-icons/fc";
+import { FcHighPriority } from "react-icons/fc";
+import { FcMediumPriority } from "react-icons/fc";
+
 export enum AlertIcon {
     Safe,
     Warning,
@@ -9,23 +13,20 @@ export interface ProductMarkingProps {
 }
 
 const ProductMarking: React.FC<ProductMarkingProps> = ({labelStatus, labelText}) => {
-    let warning: string;
+    let alert;
     switch (labelStatus) {
         case AlertIcon.Safe:
-            warning = 'S';
-            break;
+            alert = <FcOk size={20}/>; break;
         case AlertIcon.Warning:
-            warning = 'W';
-            break;
+            alert = <FcMediumPriority size={20}/>; break;
         case AlertIcon.Danger:
-            warning = 'D';
-            break;
+            alert = <FcHighPriority size={20}/>; break;
     }
 
     return (
-        <div>
-            <span className="pr-4">{warning}</span>
-            <span>{labelText}</span>
+        <div className="flex items-center">
+            <div>{alert}</div>
+            <div className="pl-2">{labelText}</div>
         </div>
     )
 }

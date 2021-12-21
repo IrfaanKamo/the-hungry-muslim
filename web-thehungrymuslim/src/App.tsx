@@ -2,7 +2,10 @@ import ProductsViewer from './components/ProductsViewer';
 
 const App = () => {
   return (
-    <div className="container mx-auto px-5 sm:px-20 lg:px-48">
+    <div className="container mx-auto bg-gr px-5 sm:px-20 xl:px-48">
+      <div className="pt-10 text-center font-semibold text-xl">
+        The Hungry Muslim
+      </div>
       <ProductsViewer />
     </div>
   );
