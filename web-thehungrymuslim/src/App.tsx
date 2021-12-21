@@ -2,7 +2,7 @@ import ProductsViewer from './components/ProductsViewer';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="container mx-auto px-5 sm:px-20 lg:px-48">
       <ProductsViewer />
     </div>
   );
