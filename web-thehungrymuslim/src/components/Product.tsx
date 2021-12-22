@@ -14,7 +14,7 @@ const Product: React.FC<ProductProps> = ({product}) => {
     return (
         <div className="flex-1 border-2 rounded-lg divide-y divide-white mb-2 mx-1 py-3 px-5 bg-indigo-100" >
             
-            <div className="text-xl line-clamp-1 font-semibold pb-5">
+            <div className="text-xl font-semibold pb-5">
                 {product.title}
             </div>
 
