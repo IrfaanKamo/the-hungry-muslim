@@ -2,14 +2,22 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Tailwind
+<br>
 
+## Packages
+
+### Tailwind
 - Tailwind is the chosen CSS framework for this project. A special installation for the Create React App was [installed](https://tailwindcss.com/docs/guides/create-react-app).  
 - As part of the process, Craco was installed. This acts as a customizable wrapper to the react-scripts functionality.
 - Tailwind Lineclamp was installed as an add-on and added to the config.
 
-## React-Icons
-We are using react-icons to display icons around the website. [Go to react-icons](https://react-icons.github.io/react-icons)
+### React-Icons
+[React-icons](https://react-icons.github.io/react-icons) is being to display icons around the website.
+
+### React Loading Skeleton
+[React Loading Skeleton](https://github.com/dvtng/react-loading-skeleton) provides a component to display a skeleton layout to notify users that the screen is loading.
+
+<br>
 
 ## Available Scripts for Create React App
 
