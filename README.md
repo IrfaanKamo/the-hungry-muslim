@@ -15,7 +15,7 @@ The API uses the [Dotenv](https://www.npmjs.com/package/dotenv) library to load 
 There is a `.env.example` file included at the root of the API project as an example, rename it to '.env' (.env is not under version control). Update the `.env` file with the pertinent information
 for your project.
 
-### Running the Projects
+## Running the Projects
 
 Perform the following for each project (some start commands may differ based on the project):
 
