@@ -16,7 +16,7 @@ Express makes use of routing which is defined by a `routes` folder which calls d
 ### Dockerising
 We make use of a Dockerfile to containerise the API for deployment.
 
-### Starting the API
+### Starting the API with Docker
 - Run `docker build .` to build the Dockerfile contents.
 - Run `docker run -p 6060:6060 <image_hash>` to start up the container.
-- The container should indicated that the server is running on port 6060.
+- The container should indicate that the server is running on port 6060.
