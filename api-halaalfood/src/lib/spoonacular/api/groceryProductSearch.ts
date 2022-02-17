@@ -3,14 +3,18 @@ import { config } from "../../../config";
 import { Product, ProductResponse } from "../models/Product";
 
 export async function searchGroceryProducts(searchString?: string): Promise<Product[]> {
-    let groceryProductSearchUrl = `${config.SpoonacularFoodUrl}/products/search?apiKey=${config.ApiKey}&addProductInformation=true&number=${config.SpoonacularNumOfProductsReturned}`;
-
-    if(searchString){
-        groceryProductSearchUrl = groceryProductSearchUrl.concat(`&query=${searchString}`);
-    }
-
     try {
-        const response = await axios.get(groceryProductSearchUrl);
+        const response = await axios.get(
+            `${config.SpoonacularFoodUrl}/products/search`,
+            {
+                params: {
+                    apiKey: config.ApiKey,
+                    addProductInformation: true,
+                    number: config.SpoonacularNumOfProductsReturned,
+                    query: searchString || ''
+                }
+            });
+            
         const productResponse = response.data as ProductResponse;
         return productResponse.products;
     }

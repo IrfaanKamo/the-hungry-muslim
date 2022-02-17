@@ -31,9 +31,19 @@ const ProductsViewer: React.FC = () => {
         setProducts([]);
 
         // call api to get results based on search criteria
-        axios.get(`http://localhost:6060/halaalProducts?search_text=${formElements.search.value}`)
+        axios.get(`http://localhost:6060/halaalProducts`, {
+                params: {
+                    search_text: formElements.search.value
+                }
+            })
             .then((response) => {
-                setProducts(response.data);
+                if(response.data.error) {
+                    setErrorMessage('Error: Could not retrieve results for your search. Please try again later.');
+                    console.log('API Error: ', response.data.error.message);
+                }
+                else {
+                    setProducts(response.data.data);
+                }
                 setLoading(false);
             })
             .catch((error) => {
