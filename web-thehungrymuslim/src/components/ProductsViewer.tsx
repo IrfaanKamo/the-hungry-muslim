@@ -11,17 +11,19 @@ const ProductsViewer: React.FC = () => {
     const [products, setProducts] = useState<Array<HalaalProduct>>([]);
     const [errorMessage, setErrorMessage] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
+    const [searchTerm, setSearchTerm] = useState<string>('');
+
+    console.log('rendered');
+
+    const handleChange = (event: any) => {
+        setSearchTerm(event.target.value);
+    }
 
     const handleSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
-        // get the search box query string
         event.preventDefault();
-        const form = event.currentTarget
-        const formElements = form.elements as typeof form.elements & {
-          search: {value: string} //id of the SearchBar's input box
-        }
 
         // prevent search if no text is provided
-        if(formElements.search.value.trim() === '') {
+        if(searchTerm.trim() === '') {
             return;
         }
 
@@ -33,7 +35,7 @@ const ProductsViewer: React.FC = () => {
         // call api to get results based on search criteria
         axios.get(`http://localhost:6060/halaalProducts`, {
                 params: {
-                    search_text: formElements.search.value
+                    search_text: searchTerm
                 }
             })
             .then((response) => {
@@ -56,7 +58,7 @@ const ProductsViewer: React.FC = () => {
     return (
         <div className="mt-5">
             <form onSubmit={handleSubmit}>
-                <SearchBar />
+                <SearchBar onChange={handleChange} />
             </form>
             <div className="flex-row justify-around pt-5">
                     { 
@@ -66,7 +68,7 @@ const ProductsViewer: React.FC = () => {
                         errorMessage && <Error message={errorMessage} />
                     }
                     { 
-                        products && products.map(product => <Product product={product}/>) 
+                        products && products.map(product => <Product key={product.id} product={product}/>) 
                     }
             </div>
         </div>
