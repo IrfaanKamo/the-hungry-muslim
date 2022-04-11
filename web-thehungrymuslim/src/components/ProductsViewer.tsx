@@ -13,8 +13,6 @@ const ProductsViewer: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(false);
     const [searchTerm, setSearchTerm] = useState<string>('');
 
-    console.log('rendered');
-
     const handleChange = (event: any) => {
         setSearchTerm(event.target.value);
     }
